@@ -15,4 +15,10 @@
         so we need give a bigger limit and keep reasoning effort at high or None
 
     2.  code is reaching HTTP client but waiting too long to get return from Sarvam(API)
-        We need Divide the problem into sub problems
+        We need to Divide the problem into sub problems
+
+    3. We are succefully dividing the problem to subproblem but the responses are
+        not as deep as we intented , so we need to change the prompt of planner_agent
+        and we need to give the model little freedom to explore little further than recent
+        times (e.g. 300 BCE - modern era) or (inscriptions, copper plates, medieval
+        literature, colonial gazetteers and ethnographies)
