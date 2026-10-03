@@ -62,8 +62,6 @@ class PlannerAgent:
             except (ValueError, ValidationError) as e:
                 last_error = e
         raise RuntimeError(f"Planner Failed error : {last_error}")
-    
-    print(planner("Padma Velama").model_dump_json(indent=2))
 
 
     def extract_json(self ,text : str) -> dict:
