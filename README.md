@@ -22,3 +22,12 @@
         and we need to give the model little freedom to explore little further than recent
         times (e.g. 300 BCE - modern era) or (inscriptions, copper plates, medieval
         literature, colonial gazetteers and ethnographies)
+
+    4. Managing the context window is a pain in the ass so we created list token windows
+        one fails to do work in particular window we shift to another one
+    
+    5. Model is stating the wrong facts very confidently so we are yet to solve this issue
+        I am thinking of creating a fact checking machine and crawl the internet or something
+
+    6. Haven't checked errors in .py files , I am pasting the code directly from experimention.ipynb
+        checked and cleared now working fine
