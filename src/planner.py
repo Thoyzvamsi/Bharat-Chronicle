@@ -1,7 +1,7 @@
 # Planner Agent
 from pydantic import BaseModel ,ValidationError
-import json ,re
 from typing import Literal
+from utils import extract_json
 
 class Subsection(BaseModel):
     id: str
@@ -40,18 +40,12 @@ class PlannerAgent:
                 ],
                 temperature = 0.2,
                 reasoning_effort = None,
+                max_tokens = 4000,
             )
-            text = response.choices[0].message.content
+            json_text = response.choices[0].message.content
 
             try:
-                return Outline.model_validate(self.extract_json(text))
+                return Outline.model_validate(extract_json(json_text))
             except (ValueError, ValidationError) as e:
                 last_error = e
         raise RuntimeError(f"Planner Failed error : {last_error}")
-
-
-    def extract_json(self ,text : str) -> dict:
-        match = re.search(r"\{.*\}",text,re.DOTALL)
-        if not match:
-            raise ValueError("No Json Found in the model output")
-        return json.loads(match.group(0))

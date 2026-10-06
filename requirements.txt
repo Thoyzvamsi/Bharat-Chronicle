@@ -2,3 +2,4 @@ sarvamai
 python-dotenv
 pydantic
 ipykernel
+ddgs

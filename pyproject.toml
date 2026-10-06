@@ -3,4 +3,4 @@
 name = "BharatChronicle"
 version = "0.0.1"
 requries-python = ">=3.10"
-dependancies = ["sarvamai","python-dotenv","pydantic"]
+dependancies = ["sarvamai","python-dotenv","pydantic","ddgs"]
